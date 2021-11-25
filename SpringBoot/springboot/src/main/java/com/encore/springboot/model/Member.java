@@ -11,10 +11,13 @@ public class Member implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
     private Long id;
-    @Column(nullable = false, updatable = false)
+    @Column(nullable = false, unique = true)
     private String userid;
+    @Column(nullable = false)
     private String password;
+    @Column(nullable = false, unique = true)
     private String email;
+    @Column(nullable = false, unique = true)
     private String phone;
 
     public Member() {}
